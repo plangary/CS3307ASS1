@@ -3,6 +3,10 @@
 #include <sys/stat.h>
 #include <string>
 #include <map>
+#include <errno.h>
+#include <pwd.h>
+#include <grp.h>
+
 using namespace std;
 
 class FileManager {
@@ -10,40 +14,60 @@ class FileManager {
 public:
     string name;
     mode_t type;
-    int errorNum;
     off_t size;
-    blksize_t blockSize;
-    string statChangeTime, accessTime,modificationTime;
-    map<string,int> owner;
-    map<string,int> group;
-    string permissions;
-    vector<int> children;
-    struct stat results;
 
+    uid_t ownerID;
+    char *ownerName; //use getpwuid() function
+
+    gid_t groupID;
+    string groupName;
+
+    mode_t permissions;
+    time_t accessTime, modTime, statusChangeTime;
+    blksize_t blockSize;
+
+    vector<int> children;
+
+    struct stat results;
+    struct passwd *pwd;
+    struct group *g;
     FileManager(const string& fileName) {
 
         if(stat(fileName.c_str(), &results)==0) {
-            cout<<"File exists";
+
+            cout<<"File exists\n";
             name = fileName;
-            blockSize = results.st_blksize;
-            size = results.st_size;
             type = results.st_mode;
+            if ((results.st_mode & S_IFMT) == S_IFREG){
+                cout<<"TRUE";
+            }
+            cout<<type;
+            size = results.st_size;
+
+
+            ownerID = results.st_uid;
+            pwd = getpwuid(ownerID);
+            ownerName = pwd->pw_name;
+
+            groupID = results.st_gid;
+            g = getgrgid(groupID);
+            groupName = g->gr_name;
 
 
 
+            blockSize = results.st_blksize;
 
         }
     }
 
 
 
-     int main() {
 
-        FileManager *test = new FileManager("");
-        cout << test->size;
-        cout<<"\nTEST";
-
-
-        return 0;
-    }
 };
+int main() {
+
+    FileManager *test = new FileManager("text.txt");
+
+
+    return 0;
+}

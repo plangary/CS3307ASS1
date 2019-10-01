@@ -35,19 +35,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/pouyalangary/Desktop/CS3307
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/pouyalangary/Desktop/CS3307/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/CS3307.dir/all:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/depend
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CS3307"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CS3307"
 .PHONY : CMakeFiles/CS3307.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CS3307.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CS3307.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/CS3307.dir/rule
 
 # Convenience name for target.

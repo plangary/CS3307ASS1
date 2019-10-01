@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/pouyalangary/Desktop/CS3307
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/pouyalangary/Desktop/CS3307/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/pouyalangary/Desktop/CS3307/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles /Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/CS3307/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ CS3307/fast:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/build
 .PHONY : CS3307/fast
 
-main.o: main.cpp.o
+FileManager.o: FileManager.cpp.o
 
-.PHONY : main.o
+.PHONY : FileManager.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/main.cpp.o
-.PHONY : main.cpp.o
+FileManager.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.o
+.PHONY : FileManager.cpp.o
 
-main.i: main.cpp.i
+FileManager.i: FileManager.cpp.i
 
-.PHONY : main.i
+.PHONY : FileManager.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/main.cpp.i
-.PHONY : main.cpp.i
+FileManager.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.i
+.PHONY : FileManager.cpp.i
 
-main.s: main.cpp.s
+FileManager.s: FileManager.cpp.s
 
-.PHONY : main.s
+.PHONY : FileManager.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/main.cpp.s
-.PHONY : main.cpp.s
+FileManager.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.s
+.PHONY : FileManager.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... CS3307"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... edit_cache"
+	@echo "... FileManager.o"
+	@echo "... FileManager.i"
+	@echo "... FileManager.s"
 .PHONY : help
 
 
