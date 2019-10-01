@@ -14,6 +14,7 @@ class FileManager {
 public:
     string name;
     mode_t type;
+    string typeString;
     off_t size;
 
     uid_t ownerID;
@@ -23,6 +24,8 @@ public:
     string groupName;
 
     mode_t permissions;
+    string permString;
+
     time_t accessTime, modTime, statusChangeTime;
     blksize_t blockSize;
 
@@ -37,11 +40,32 @@ public:
 
             cout<<"File exists\n";
             name = fileName;
+
             type = results.st_mode;
             if ((results.st_mode & S_IFMT) == S_IFREG){
-                cout<<"TRUE";
+                typeString = "regular";
+                  }
+            else if  ((results.st_mode & S_IFMT) == S_IFSOCK){
+                typeString = "socket";
             }
-            cout<<type;
+            else if ((results.st_mode & S_IFMT) == S_IFLNK){
+                typeString = "symbolic";
+            }
+            else if ((results.st_mode & S_IFMT) == S_IFBLK){
+                typeString = "block";
+            }
+            else if ((results.st_mode & S_IFMT) == S_IFDIR){
+                typeString = "directory";
+            }
+            else if ((results.st_mode & S_IFMT) == S_IFCHR){
+                typeString = "character";
+            }
+            else if  ((results.st_mode & S_IFMT) == S_IFIFO){
+                typeString = "FIFO";
+
+            }
+
+            cout<<typeString;
             size = results.st_size;
 
 
@@ -55,7 +79,20 @@ public:
 
 
 
+            if (results.st_mode & S_IRUSR){
+                permString.append("r") ;
+            }
+            if (results.st_mode & S_IWUSR){
+                permString.append("w");
+            }
+            if (results.st_mode & S_IXUSR){
+                permString.append("x");
+            }
+
+
+
             blockSize = results.st_blksize;
+
 
         }
     }
