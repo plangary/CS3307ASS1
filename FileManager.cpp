@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <pwd.h>
 #include <grp.h>
+#include <ctime>
 
 using namespace std;
 
@@ -26,7 +27,8 @@ public:
     mode_t permissions;
     string permString;
 
-    time_t accessTime, modTime, statusChangeTime;
+    time_t accessTime;
+    time_t modTime, statusChangeTime;
     blksize_t blockSize;
 
     vector<int> children;
@@ -34,38 +36,32 @@ public:
     struct stat results;
     struct passwd *pwd;
     struct group *g;
-    FileManager(const string& fileName) {
+    struct timespec st_atim;
 
-        if(stat(fileName.c_str(), &results)==0) {
+    FileManager(const string &fileName) {
 
-            cout<<"File exists\n";
+        if (stat(fileName.c_str(), &results) == 0) {
+
             name = fileName;
 
             type = results.st_mode;
-            if ((results.st_mode & S_IFMT) == S_IFREG){
+            if ((results.st_mode & S_IFMT) == S_IFREG) {
                 typeString = "regular";
-                  }
-            else if  ((results.st_mode & S_IFMT) == S_IFSOCK){
+            } else if ((results.st_mode & S_IFMT) == S_IFSOCK) {
                 typeString = "socket";
-            }
-            else if ((results.st_mode & S_IFMT) == S_IFLNK){
+            } else if ((results.st_mode & S_IFMT) == S_IFLNK) {
                 typeString = "symbolic";
-            }
-            else if ((results.st_mode & S_IFMT) == S_IFBLK){
+            } else if ((results.st_mode & S_IFMT) == S_IFBLK) {
                 typeString = "block";
-            }
-            else if ((results.st_mode & S_IFMT) == S_IFDIR){
+            } else if ((results.st_mode & S_IFMT) == S_IFDIR) {
                 typeString = "directory";
-            }
-            else if ((results.st_mode & S_IFMT) == S_IFCHR){
+            } else if ((results.st_mode & S_IFMT) == S_IFCHR) {
                 typeString = "character";
-            }
-            else if  ((results.st_mode & S_IFMT) == S_IFIFO){
+            } else if ((results.st_mode & S_IFMT) == S_IFIFO) {
                 typeString = "FIFO";
 
             }
 
-            cout<<typeString;
             size = results.st_size;
 
 
@@ -78,29 +74,44 @@ public:
             groupName = g->gr_name;
 
 
-
-            if (results.st_mode & S_IRUSR){
-                permString.append("r") ;
+            if (results.st_mode & S_IRUSR) {
+                permString.append("r");
             }
-            if (results.st_mode & S_IWUSR){
+            if (results.st_mode & S_IWUSR) {
                 permString.append("w");
             }
-            if (results.st_mode & S_IXUSR){
+            if (results.st_mode & S_IXUSR) {
                 permString.append("x");
             }
 
 
+            accessTime = results.st_atime;
+            modTime = results.st_mtime;
+            statusChangeTime = results.st_ctime;
 
+            //accessTime = ctime(reinterpret_cast<const time_t *>(&results.st_atim));
+            //modTime = ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
+            //statusChangeTime = ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
+
+            cout << accessTime;
+            cout << "\n";
+            cout << modTime;
+            cout << "\n";
+
+            cout << statusChangeTime;
             blockSize = results.st_blksize;
-
-
+            cout << "\n";
+        } else {
+            name = "failed";
         }
     }
 
+    ~FileManager()= default;
 
 
 
 };
+
 int main() {
 
     FileManager *test = new FileManager("text.txt");
