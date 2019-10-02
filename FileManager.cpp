@@ -7,6 +7,7 @@
 #include <pwd.h>
 #include <grp.h>
 #include <ctime>
+#include <fstream>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private:
     string typeString;
     off_t size;
 
+    int errNum = 0;
     uid_t ownerID;
     char *ownerName; //use getpwuid() function
 
@@ -93,14 +95,8 @@ public:
             //modTime = ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
             //statusChangeTime = ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
 
-            cout << ctime(&accessTime);
-            cout << "\n";
-            cout << ctime(&modTime);
-            cout << "\n";
 
-            cout << ctime(&statusChangeTime);
             blockSize = results.st_blksize;
-            cout << "\n";
         } else {
             name = "failed";
         }
@@ -108,9 +104,32 @@ public:
 
     ~FileManager()= default;
 
-    void dump (ifstream &input, string text){
+    int dump (ofstream &input){
+        if (typeString == "regular"){
+            cout<<"REGULAR FILE\n";
+            input.open(name);
+          if(input.is_open())
+              cout<<input.rdbuf();
+
+          return 0;
+
+        }else{
+            errNum = ENOTSUP;
+
+            cout<<"IRREGULAR!";
+            return ENOTSUP;
+        }
+
 
     }
+
+    int myRename (string newName){
+        int result;
+        result = rename(name.c_str(),newName.c_str());
+        name = newName;
+        errno =result;
+        return errno;
+    } 
 
 
     string getName(){
@@ -124,7 +143,6 @@ public:
     off_t getSize(){
         return size;
     }
-
 
     char *getOwnerName(){
         return ownerName;
@@ -158,7 +176,11 @@ public:
 
 int main() {
 
-    FileManager *test = new FileManager("text.txt");
+    FileManager *test = new FileManager("test");
+    test->myRename("newname");
+    //ofstream test2;
+    //test->dump(test2);
+
 
 
     return 0;
