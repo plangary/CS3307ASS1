@@ -36,7 +36,6 @@ public:
     struct stat results;
     struct passwd *pwd;
     struct group *g;
-    struct timespec st_atim;
 
     FileManager(const string &fileName) {
 
@@ -93,12 +92,12 @@ public:
             //modTime = ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
             //statusChangeTime = ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
 
-            cout << accessTime;
+            cout << ctime(&accessTime);
             cout << "\n";
-            cout << modTime;
+            cout << ctime(&modTime);
             cout << "\n";
 
-            cout << statusChangeTime;
+            cout << ctime(&statusChangeTime);
             blockSize = results.st_blksize;
             cout << "\n";
         } else {
@@ -107,6 +106,10 @@ public:
     }
 
     ~FileManager()= default;
+
+    void dump (ifstream &input, string text){
+
+    }
 
 
 
