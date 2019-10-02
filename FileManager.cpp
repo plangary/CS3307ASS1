@@ -12,7 +12,7 @@ using namespace std;
 
 class FileManager {
 
-public:
+private:
     string name;
     mode_t type;
     string typeString;
@@ -37,6 +37,7 @@ public:
     struct passwd *pwd;
     struct group *g;
 
+public:
     FileManager(const string &fileName) {
 
         if (stat(fileName.c_str(), &results) == 0) {
@@ -112,6 +113,46 @@ public:
     }
 
 
+    string getName(){
+        return name;
+    }
+
+    string getType(){
+        return typeString;
+    }
+
+    off_t getSize(){
+        return size;
+    }
+
+
+    char *getOwnerName(){
+        return ownerName;
+    }
+
+    string getGroupName(){
+        return groupName;
+    }
+
+    string getPermissions(){
+        return permString;
+    }
+
+    time_t getAccessTime(){
+        return accessTime;
+    }
+
+    time_t getModTime(){
+        return modTime;
+    }
+
+    time_t getStatChangeTime(){
+        return statusChangeTime;
+    }
+
+    blksize_t getBlckSize(){
+        return blockSize;
+    }
 
 };
 
