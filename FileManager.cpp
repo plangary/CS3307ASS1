@@ -105,18 +105,16 @@ public:
 
     ~FileManager()= default;
 
-    int dump (ofstream &input){
+    int dump (fstream &input){
         if (typeString == "regular"){
-            cout<<"REGULAR FILE\n";
             input.open(name);
-          if(input.is_open())
-              cout<<input.rdbuf();
+
+
 
           return 0;
 
         }else{
             errNum = ENOTSUP;
-
             cout<<"IRREGULAR!";
             return ENOTSUP;
         }
@@ -143,8 +141,17 @@ public:
 
     }
 
-    int myCompare (FileManager object){
+    /*int myCompare (FileManager object){
 
+    }*/
+
+    int myExpand(){
+        if (typeString =="directory" ){
+
+        }
+
+        errNum = ENOTSUP;
+        return -1;
     }
 
 
@@ -196,8 +203,8 @@ int main() {
     //test->myRename("/media/sf_VMSharing/sampleDir/newname");
     //test->myRemove("test");
     //cout<<test->getName();
-    //ofstream test2;
-    //test->dump(test2);
+    ofstream test2;
+    test->dump(test2);
 
 
 
