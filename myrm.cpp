@@ -4,11 +4,11 @@
 
 #include "FileManager.cpp"
 
-class myrm{
+class myrm {
 
 };
 
-int main(int argc, char* argv[]){
+int main(int argc, char *argv[]) {
     struct stat results;
 
     string temp;
@@ -16,12 +16,11 @@ int main(int argc, char* argv[]){
     i = 1;
     while (i < argc) {
         temp = argv[i];
-        if(stat(temp.c_str(), &results)==0) {
+        if (stat(temp.c_str(), &results) == 0) {
             FileManager *object = new FileManager(argv[i]);
             object->myRemove(argv[i]);
-        }
-        else{
-            cout<<"No Such File or Directory!\n";
+        } else {
+            cout << "No Such File or Directory!\n";
         }
         i++;
     }

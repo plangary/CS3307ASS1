@@ -105,22 +105,23 @@ public:
 
     ~FileManager() = default;
 
-    int dump(fstream &inFile,string newName) {
-        if(stat(name.c_str(), &results)==0){ //works for files and directories but doesnt when given path that ends in directory
-        if (typeString == "regular") {
-            inFile.open(name);
-            ofstream outFile;
-            outFile.open(newName);
-            char *buffer = new char[size];
-            inFile.read(buffer, size);
-            cout << "WRITING\n";
-            outFile.write(buffer, size);
-            inFile.close();
-            outFile.close();
+    int dump(fstream &inFile, string newName) {
+        if (stat(name.c_str(), &results) ==
+            0) { //works for files and directories but doesnt when given path that ends in directory
+            if (typeString == "regular") {
+                inFile.open(name);
+                ofstream outFile;
+                outFile.open(newName);
+                char *buffer = new char[size];
+                inFile.read(buffer, size);
+                cout << "WRITING\n";
+                outFile.write(buffer, size);
+                inFile.close();
+                outFile.close();
 
-            errNum = errno;
-            return 0;
-        }
+                errNum = errno;
+                return 0;
+            }
         } else {
             cout << "IRREGULAR FILE OR FILE DOES NOT EXIST!\n";
             errNum = ENOTSUP;
@@ -132,14 +133,14 @@ public:
 
     int myRename(string newName) {
         int result;
-        if(stat(name.c_str(),&results)==0) {
+        if (stat(name.c_str(), &results) == 0) {
             result = rename(name.c_str(), newName.c_str());
             name = newName;
             errNum = result;
             return 0;
         }
 
-        cout<<"file does not exist!\n";
+        cout << "file does not exist!\n";
         return errNum;
     }
 
@@ -212,7 +213,7 @@ public:
         return typeString;
     }
 
-    mode_t getTypeID(){
+    mode_t getTypeID() {
         return type;
     }
 
@@ -225,7 +226,7 @@ public:
         return ownerName;
     }
 
-    uid_t getOwnerID(){
+    uid_t getOwnerID() {
         return ownerID;
     }
 
@@ -233,7 +234,7 @@ public:
         return groupName;
     }
 
-    gid_t getGroupID(){
+    gid_t getGroupID() {
         return groupID;
     }
 
@@ -241,15 +242,15 @@ public:
         return permString;
     }
 
-    char* getAccessTime() {
+    char *getAccessTime() {
         return ctime(reinterpret_cast<const time_t *>(&results.st_atim));
     }
 
-    char* getModTime() {
+    char *getModTime() {
         return ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
     }
 
-    char* getStatChangeTime() {
+    char *getStatChangeTime() {
         return ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
     }
 
