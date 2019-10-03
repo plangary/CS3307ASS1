@@ -9,6 +9,7 @@
 #include <ctime>
 #include <fstream>
 #include <unistd.h>
+#include <cstring>
 
 using namespace std;
 
@@ -67,7 +68,6 @@ public:
 
             size = results.st_size;
 
-
             ownerID = results.st_uid;
             pwd = getpwuid(ownerID);
             ownerName = pwd->pw_name;
@@ -103,9 +103,9 @@ public:
         }
     }
 
-    ~FileManager()= default;
+    ~FileManager() = default;
 
-    int dump (fstream &inFile){
+    int dump(fstream &inFile) {
         if (typeString == "regular") {
             inFile.open(name);
             ofstream outFile;
@@ -117,10 +117,10 @@ public:
             inFile.close();
             outFile.close();
 
+            errNum = errno;
             return 0;
-        }
-        else{
-            cout<<"IRREGULAR FILE!";
+        } else {
+            cout << "IRREGULAR FILE!";
             errNum = ENOTSUP;
             return ENOTSUP;
         }
@@ -128,31 +128,67 @@ public:
 
     }
 
-    int myRename (string newName){
+    int myRename(string newName) {
         int result;
-        result = rename(name.c_str(),newName.c_str());
+        result = rename(name.c_str(), newName.c_str());
         name = newName;
         errNum = errno;
         return errNum;
     }
 
-    int myRemove (string fileName){
-        if((unlink(fileName.c_str())==0)){
+    int myRemove(string fileName) {
+        if ((unlink(fileName.c_str()) == 0)) {
             errNum = errno;
             delete this;
             return 0;
         }
-        errNum =errno;
+        errNum = errno;
         return -1;
 
     }
 
-    /*int myCompare (FileManager object){
+    int myCompare(FileManager *object) {
+        if (typeString == "regular") {
+            if (object->getSize() == size) {
+                int i;
+                i = 0;
+                fstream file1;
+                fstream file2;
 
-    }*/
+                file1.open(object->getName());
+                file2.open(name);
 
-    int myExpand(){
-        if (typeString =="directory" ){
+                char fileArray1[object->getSize()];
+                char fileArray2[size];
+
+                while (!file1.eof()) {
+                    file1.getline(fileArray1, size);
+                    file2.getline(fileArray2, size);
+                    i++;
+                    if (strcmp(fileArray1, fileArray2) !=
+                        0) { //not fully working. doesnt work when same amount of characters but different chars
+                        cout << "FILES NOT EQUAL!\n";
+                        return errNum = -1;
+                    }
+                    cout << "FILES ARE EQUAL!222\n";
+                    return errNum = 0;
+                }
+            } else {
+                cout << "FILES NOT EQUAL!\n";
+                return -1;
+            }
+
+        } else {
+            cout << "IRREGULAR FILE!";
+            errNum = ENOTSUP;
+            return errNum;
+        }
+
+
+    }
+
+    int myExpand() {
+        if (typeString == "directory") {
 
         }
 
@@ -161,43 +197,43 @@ public:
     }
 
 
-    string getName(){
+    string getName() {
         return name;
     }
 
-    string getType(){
+    string getType() {
         return typeString;
     }
 
-    off_t getSize(){
+    off_t getSize() {
         return size;
     }
 
-    char *getOwnerName(){
+    char *getOwnerName() {
         return ownerName;
     }
 
-    string getGroupName(){
+    string getGroupName() {
         return groupName;
     }
 
-    string getPermissions(){
+    string getPermissions() {
         return permString;
     }
 
-    time_t getAccessTime(){
+    time_t getAccessTime() {
         return accessTime;
     }
 
-    time_t getModTime(){
+    time_t getModTime() {
         return modTime;
     }
 
-    time_t getStatChangeTime(){
+    time_t getStatChangeTime() {
         return statusChangeTime;
     }
 
-    blksize_t getBlckSize(){
+    blksize_t getBlckSize() {
         return blockSize;
     }
 
@@ -206,11 +242,14 @@ public:
 int main() {
 
     FileManager *test = new FileManager("test");
+    FileManager *test2 = new FileManager("new");
+    test->myCompare(test2);
+
     //test->myRename("/media/sf_VMSharing/sampleDir/newname");
     //test->myRemove("test");
     //cout<<test->getName();
-    fstream test2;
-    test->dump(test2);
+    //fstream test2;
+    //test->dump(test2);
 
 
 
