@@ -105,22 +105,24 @@ public:
 
     ~FileManager() = default;
 
-    int dump(fstream &inFile) {
+    int dump(fstream &inFile,string newName) {
+        if(stat(name.c_str(), &results)==0){ //works for files and directories but doesnt when given path that ends in directory
         if (typeString == "regular") {
             inFile.open(name);
             ofstream outFile;
-            outFile.open("newFile");
+            outFile.open(newName);
             char *buffer = new char[size];
             inFile.read(buffer, size);
-            cout << "WRITING";
+            cout << "WRITING\n";
             outFile.write(buffer, size);
             inFile.close();
             outFile.close();
 
             errNum = errno;
             return 0;
+        }
         } else {
-            cout << "IRREGULAR FILE!";
+            cout << "IRREGULAR FILE OR FILE DOES NOT EXIST!\n";
             errNum = ENOTSUP;
             return ENOTSUP;
         }

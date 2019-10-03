@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/FileManager.cpp" "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/CS3307.dir/FileManager.cpp.o"
   "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mycp.cpp" "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/CS3307.dir/mycp.cpp.o"
+  "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myls.cpp" "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/CS3307.dir/myls.cpp.o"
   "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mymv.cpp" "/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/CS3307.dir/mymv.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

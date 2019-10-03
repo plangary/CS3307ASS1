@@ -177,6 +177,33 @@ mycp.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.s
 .PHONY : mycp.cpp.s
 
+myls.o: myls.cpp.o
+
+.PHONY : myls.o
+
+# target to build an object file
+myls.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.o
+.PHONY : myls.cpp.o
+
+myls.i: myls.cpp.i
+
+.PHONY : myls.i
+
+# target to preprocess a source file
+myls.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.i
+.PHONY : myls.cpp.i
+
+myls.s: myls.cpp.s
+
+.PHONY : myls.s
+
+# target to generate assembly for a file
+myls.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.s
+.PHONY : myls.cpp.s
+
 mymv.o: mymv.cpp.o
 
 .PHONY : mymv.o
@@ -219,6 +246,9 @@ help:
 	@echo "... mycp.o"
 	@echo "... mycp.i"
 	@echo "... mycp.s"
+	@echo "... myls.o"
+	@echo "... myls.i"
+	@echo "... myls.s"
 	@echo "... mymv.o"
 	@echo "... mymv.i"
 	@echo "... mymv.s"

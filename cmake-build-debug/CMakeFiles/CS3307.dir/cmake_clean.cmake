@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CS3307.dir/FileManager.cpp.o"
   "CMakeFiles/CS3307.dir/mycp.cpp.o"
+  "CMakeFiles/CS3307.dir/myls.cpp.o"
   "CMakeFiles/CS3307.dir/mymv.cpp.o"
   "CS3307.exe"
   "CS3307.pdb"
