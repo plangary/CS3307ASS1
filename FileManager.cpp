@@ -241,16 +241,16 @@ public:
         return permString;
     }
 
-    time_t getAccessTime() {
-        return accessTime;
+    char* getAccessTime() {
+        return ctime(reinterpret_cast<const time_t *>(&results.st_atim));
     }
 
-    time_t getModTime() {
-        return modTime;
+    char* getModTime() {
+        return ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
     }
 
-    time_t getStatChangeTime() {
-        return statusChangeTime;
+    char* getStatChangeTime() {
+        return ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
     }
 
     blksize_t getBlckSize() {
