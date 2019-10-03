@@ -8,6 +8,7 @@
 #include <grp.h>
 #include <ctime>
 #include <fstream>
+#include <zconf.h>
 
 using namespace std;
 
@@ -127,9 +128,24 @@ public:
         int result;
         result = rename(name.c_str(),newName.c_str());
         name = newName;
-        errno =result;
-        return errno;
-    } 
+        errNum = errno;
+        return errNum;
+    }
+
+    int myRemove (string fileName){
+        if((unlink(fileName.c_str())==0)){
+            errNum = errno;
+            delete this;
+            return 0;
+        }
+        errNum =errno;
+        return -1;
+
+    }
+
+    int myCompare (FileManager object){
+
+    }
 
 
     string getName(){
@@ -177,7 +193,9 @@ public:
 int main() {
 
     FileManager *test = new FileManager("test");
-    test->myRename("newname");
+    //test->myRename("/media/sf_VMSharing/sampleDir/newname");
+    //test->myRemove("test");
+    //cout<<test->getName();
     //ofstream test2;
     //test->dump(test2);
 
