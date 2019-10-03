@@ -6,16 +6,22 @@
 
 class mymv{
 
-    mymv(string oldName, string newName){
-      
-
-    }
-
-
-
 };
 
-int main(){
+/*int main(int argc, char* argv[]){
+    if(argc==3){
+        FileManager *object = new FileManager(argv[1]);
+        object->myRename(argv[2]);
+        cout<<argc<<"\n";
+        return 0;
 
-    return 0;
+    }
+    cout<<"Incorrect number of arguments. Provide 2 arguments only!\n oldFile newFile\n";
+    cout<<argc;
+
+
+
+
+    return -1;
 }
+*/

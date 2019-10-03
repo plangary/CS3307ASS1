@@ -110,10 +110,10 @@ public:
             inFile.open(name);
             ofstream outFile;
             outFile.open("newFile");
-            char *buffer = new char[blockSize];
-            inFile.read(buffer, blockSize);
+            char *buffer = new char[size];
+            inFile.read(buffer, size);
             cout << "WRITING";
-            outFile.write(buffer, blockSize);
+            outFile.write(buffer, size);
             inFile.close();
             outFile.close();
 
@@ -130,9 +130,14 @@ public:
 
     int myRename(string newName) {
         int result;
-        result = rename(name.c_str(), newName.c_str());
-        name = newName;
-        errNum = errno;
+        if(stat(name.c_str(),&results)==0) {
+            result = rename(name.c_str(), newName.c_str());
+            name = newName;
+            errNum = result;
+            return 0;
+        }
+
+        cout<<"file does not exist!\n";
         return errNum;
     }
 
@@ -241,11 +246,11 @@ public:
 
 /*int main() {
 
-    FileManager *test = new FileManager("test");
-    FileManager *test2 = new FileManager("new");
-    test->myCompare(test2);
+    FileManager *test = new FileManager("newFile");
+    //FileManager *test2 = new FileManager("new");
+    //test->myCompare(test2);
 
-    //test->myRename("/media/sf_VMSharing/sampleDir/newname");
+    test->myRename("/media/sf_VMSgaring/CS3307ASS1/dir/test");
     //test->myRemove("test");
     //cout<<test->getName();
     //fstream test2;
