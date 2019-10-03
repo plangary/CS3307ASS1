@@ -10,7 +10,7 @@ class mystat {
 };
 
 int main(int argc, char *argv[]) {
-    if (argc == 2) {
+    if (argc == 2) { //check if correct number of arguments are provided
         FileManager *object = new FileManager(argv[1]);
         cout << "Name:\t" << object->getName() << "\n";
         cout << "File Type:\t" << object->getType() << "\n";

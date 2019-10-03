@@ -10,10 +10,10 @@ class mydiff {
 };
 
 int main(int argc, char *argv[]) {
-    if (argc == 3) {
-        FileManager *object = new FileManager(argv[1]);
+    if (argc == 3) { //check if correct number of arguments are provided
+        FileManager *object = new FileManager(argv[1]); //create 2 filemanager objects to compare
         FileManager *object2 = new FileManager(argv[2]);
-        object->myCompare(object2);
+        object->myCompare(object2); //call compare method on objects
 
         return 0;
     }

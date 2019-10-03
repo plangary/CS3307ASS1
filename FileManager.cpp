@@ -49,19 +49,19 @@ public:
             name = fileName;
 
             type = results.st_mode;
-            if ((results.st_mode & S_IFMT) == S_IFREG) {
+            if ((results.st_mode & S_IFMT) == S_IFREG) { //check if type is regular and set typeString accordingly
                 typeString = "regular";
-            } else if ((results.st_mode & S_IFMT) == S_IFSOCK) {
+            } else if ((results.st_mode & S_IFMT) == S_IFSOCK) { //socket
                 typeString = "socket";
-            } else if ((results.st_mode & S_IFMT) == S_IFLNK) {
+            } else if ((results.st_mode & S_IFMT) == S_IFLNK) { //symbolic
                 typeString = "symbolic";
-            } else if ((results.st_mode & S_IFMT) == S_IFBLK) {
+            } else if ((results.st_mode & S_IFMT) == S_IFBLK) { //block
                 typeString = "block";
-            } else if ((results.st_mode & S_IFMT) == S_IFDIR) {
+            } else if ((results.st_mode & S_IFMT) == S_IFDIR) { //directory
                 typeString = "directory";
-            } else if ((results.st_mode & S_IFMT) == S_IFCHR) {
+            } else if ((results.st_mode & S_IFMT) == S_IFCHR) { //character
                 typeString = "character";
-            } else if ((results.st_mode & S_IFMT) == S_IFIFO) {
+            } else if ((results.st_mode & S_IFMT) == S_IFIFO) { //fifo
                 typeString = "FIFO";
 
             }
@@ -77,13 +77,13 @@ public:
             groupName = g->gr_name;
 
 
-            if (results.st_mode & S_IRUSR) {
+            if (results.st_mode & S_IRUSR) { //check read permissions
                 permString.append("r");
             }
-            if (results.st_mode & S_IWUSR) {
+            if (results.st_mode & S_IWUSR) { //check write permissions
                 permString.append("w");
             }
-            if (results.st_mode & S_IXUSR) {
+            if (results.st_mode & S_IXUSR) { //check execute permissions
                 permString.append("x");
             }
 
@@ -92,10 +92,6 @@ public:
             modTime = results.st_mtime;
             statusChangeTime = results.st_ctime;
 
-            //accessTime = ctime(reinterpret_cast<const time_t *>(&results.st_atim));
-            //modTime = ctime(reinterpret_cast<const time_t *>(&results.st_mtim));
-            //statusChangeTime = ctime(reinterpret_cast<const time_t *>(&results.st_ctim));
-
 
             blockSize = results.st_blksize;
         } else {
@@ -103,23 +99,22 @@ public:
         }
     }
 
-    ~FileManager() = default;
+    ~FileManager() = default; //deconstructor
 
     int dump(fstream &inFile, string newName) {
-        if (stat(name.c_str(), &results) ==
-            0) { //works for files and directories but doesnt when given path that ends in directory
-            if (typeString == "regular") {
-                inFile.open(name);
-                ofstream outFile;
+        if (stat(name.c_str(), &results) == 0) {  //check if file exists
+            if (typeString == "regular") { //check if regular file
+                inFile.open(name); //open filestream
+                ofstream outFile; //create outfile stream
                 outFile.open(newName);
-                char *buffer = new char[size];
-                inFile.read(buffer, size);
+                char *buffer = new char[size]; //create buffer with specified size
+                inFile.read(buffer, size); //read
                 cout << "WRITING\n";
-                outFile.write(buffer, size);
-                inFile.close();
+                outFile.write(buffer, size); //write to buffer
+                inFile.close(); //close file streams
                 outFile.close();
 
-                errNum = errno;
+                errNum = errno; //set error number
                 return 0;
             }
         } else {
@@ -133,9 +128,9 @@ public:
 
     int myRename(string newName) {
         int result;
-        if (stat(name.c_str(), &results) == 0) {
-            result = rename(name.c_str(), newName.c_str());
-            name = newName;
+        if (stat(name.c_str(), &results) == 0) { //check if file exists
+            result = rename(name.c_str(), newName.c_str()); //call rename on specified file
+            name = newName; //set new name as name
             errNum = result;
             return 0;
         }
@@ -145,9 +140,9 @@ public:
     }
 
     int myRemove(string fileName) {
-        if ((unlink(fileName.c_str()) == 0)) {
-            errNum = errno;
-            delete this;
+        if ((unlink(fileName.c_str()) == 0)) { //remove file. check if successful
+            errNum = errno; //set error number
+            delete this; //delete object
             return 0;
         }
         errNum = errno;

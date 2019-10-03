@@ -101,9 +101,6 @@
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mystat.cpp">
 			<Option target="CS3307"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mystat.h">
-			<Option target="CS3307"/>
-		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
