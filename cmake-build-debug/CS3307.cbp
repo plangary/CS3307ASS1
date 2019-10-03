@@ -89,13 +89,19 @@
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mycp.cpp">
 			<Option target="CS3307"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mydiff.cpp">
+			<Option target="CS3307"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mymv.cpp">
 			<Option target="CS3307"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myrm.cpp">
 			<Option target="CS3307"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myrm.h">
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mystat.cpp">
+			<Option target="CS3307"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mystat.h">
 			<Option target="CS3307"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/CMakeLists.txt">

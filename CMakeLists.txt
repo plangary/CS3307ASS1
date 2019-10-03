@@ -3,4 +3,4 @@ project(CS3307)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CS3307 FileManager.cpp mymv.cpp mycp.cpp mycat.cpp myrm.cpp)
+add_executable(CS3307 FileManager.cpp mymv.cpp mycp.cpp mycat.cpp myrm.cpp mydiff.cpp mystat.cpp)

@@ -204,6 +204,33 @@ mycp.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.s
 .PHONY : mycp.cpp.s
 
+mydiff.o: mydiff.cpp.o
+
+.PHONY : mydiff.o
+
+# target to build an object file
+mydiff.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mydiff.cpp.o
+.PHONY : mydiff.cpp.o
+
+mydiff.i: mydiff.cpp.i
+
+.PHONY : mydiff.i
+
+# target to preprocess a source file
+mydiff.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mydiff.cpp.i
+.PHONY : mydiff.cpp.i
+
+mydiff.s: mydiff.cpp.s
+
+.PHONY : mydiff.s
+
+# target to generate assembly for a file
+mydiff.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mydiff.cpp.s
+.PHONY : mydiff.cpp.s
+
 mymv.o: mymv.cpp.o
 
 .PHONY : mymv.o
@@ -258,6 +285,33 @@ myrm.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myrm.cpp.s
 .PHONY : myrm.cpp.s
 
+mystat.o: mystat.cpp.o
+
+.PHONY : mystat.o
+
+# target to build an object file
+mystat.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mystat.cpp.o
+.PHONY : mystat.cpp.o
+
+mystat.i: mystat.cpp.i
+
+.PHONY : mystat.i
+
+# target to preprocess a source file
+mystat.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mystat.cpp.i
+.PHONY : mystat.cpp.i
+
+mystat.s: mystat.cpp.s
+
+.PHONY : mystat.s
+
+# target to generate assembly for a file
+mystat.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mystat.cpp.s
+.PHONY : mystat.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -276,12 +330,18 @@ help:
 	@echo "... mycp.o"
 	@echo "... mycp.i"
 	@echo "... mycp.s"
+	@echo "... mydiff.o"
+	@echo "... mydiff.i"
+	@echo "... mydiff.s"
 	@echo "... mymv.o"
 	@echo "... mymv.i"
 	@echo "... mymv.s"
 	@echo "... myrm.o"
 	@echo "... myrm.i"
 	@echo "... myrm.s"
+	@echo "... mystat.o"
+	@echo "... mystat.i"
+	@echo "... mystat.s"
 .PHONY : help
 
 

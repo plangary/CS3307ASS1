@@ -212,16 +212,29 @@ public:
         return typeString;
     }
 
+    mode_t getTypeID(){
+        return type;
+    }
+
     off_t getSize() {
         return size;
     }
+
 
     char *getOwnerName() {
         return ownerName;
     }
 
+    uid_t getOwnerID(){
+        return ownerID;
+    }
+
     string getGroupName() {
         return groupName;
+    }
+
+    gid_t getGroupID(){
+        return groupID;
     }
 
     string getPermissions() {
