@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CS3307.dir/FileManager.cpp.o"
-  "CS3307"
+  "CMakeFiles/CS3307.dir/mymv.cpp.o"
+  "CS3307.exe"
   "CS3307.pdb"
+  "libCS3307.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

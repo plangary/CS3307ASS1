@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/pouyalangary/Desktop/3307IndividualAssignment
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/pouyalangary/Desktop/3307IndividualAssignment/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/pouyalangary/Desktop/3307IndividualAssignment/cmake-bu
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/pouya/.CLion2019.2/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/3307IndividualAssignment/cmake-build-debug/CMakeFiles /Users/pouyalangary/Desktop/3307IndividualAssignment/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/pouyalangary/Desktop/3307IndividualAssignment/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ FileManager.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.s
 .PHONY : FileManager.cpp.s
 
+mymv.o: mymv.cpp.o
+
+.PHONY : mymv.o
+
+# target to build an object file
+mymv.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mymv.cpp.o
+.PHONY : mymv.cpp.o
+
+mymv.i: mymv.cpp.i
+
+.PHONY : mymv.i
+
+# target to preprocess a source file
+mymv.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mymv.cpp.i
+.PHONY : mymv.cpp.i
+
+mymv.s: mymv.cpp.s
+
+.PHONY : mymv.s
+
+# target to generate assembly for a file
+mymv.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mymv.cpp.s
+.PHONY : mymv.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +184,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... CS3307"
+	@echo "... edit_cache"
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
+	@echo "... mymv.o"
+	@echo "... mymv.i"
+	@echo "... mymv.s"
 .PHONY : help
 
 

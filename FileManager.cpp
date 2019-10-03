@@ -239,7 +239,7 @@ public:
 
 };
 
-int main() {
+/*int main() {
 
     FileManager *test = new FileManager("test");
     FileManager *test2 = new FileManager("new");
@@ -254,4 +254,4 @@ int main() {
 
 
     return 0;
-}
+}*/
