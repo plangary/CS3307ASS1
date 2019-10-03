@@ -8,7 +8,7 @@
 #include <grp.h>
 #include <ctime>
 #include <fstream>
-#include <zconf.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -105,17 +105,23 @@ public:
 
     ~FileManager()= default;
 
-    int dump (fstream &input){
-        if (typeString == "regular"){
-            input.open(name);
+    int dump (fstream &inFile){
+        if (typeString == "regular") {
+            inFile.open(name);
+            ofstream outFile;
+            outFile.open("newFile");
+            char *buffer = new char[blockSize];
+            inFile.read(buffer, blockSize);
+            cout << "WRITING";
+            outFile.write(buffer, blockSize);
+            inFile.close();
+            outFile.close();
 
-
-
-          return 0;
-
-        }else{
+            return 0;
+        }
+        else{
+            cout<<"IRREGULAR FILE!";
             errNum = ENOTSUP;
-            cout<<"IRREGULAR!";
             return ENOTSUP;
         }
 
@@ -203,7 +209,7 @@ int main() {
     //test->myRename("/media/sf_VMSharing/sampleDir/newname");
     //test->myRemove("test");
     //cout<<test->getName();
-    ofstream test2;
+    fstream test2;
     test->dump(test2);
 
 
