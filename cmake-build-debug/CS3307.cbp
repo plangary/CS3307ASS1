@@ -83,16 +83,19 @@
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/FileManager.cpp">
 			<Option target="CS3307"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mycat.cpp">
+			<Option target="CS3307"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mycp.cpp">
 			<Option target="CS3307"/>
 		</Unit>
-		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myls.cpp">
-			<Option target="CS3307"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myls.h">
-			<Option target="CS3307"/>
-		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/mymv.cpp">
+			<Option target="CS3307"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myrm.cpp">
+			<Option target="CS3307"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/myrm.h">
 			<Option target="CS3307"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/pouya/OneDrive/Desktop/CS3307ASS1/CS3307ASS1/CMakeLists.txt">

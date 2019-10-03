@@ -150,6 +150,33 @@ FileManager.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.s
 .PHONY : FileManager.cpp.s
 
+mycat.o: mycat.cpp.o
+
+.PHONY : mycat.o
+
+# target to build an object file
+mycat.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycat.cpp.o
+.PHONY : mycat.cpp.o
+
+mycat.i: mycat.cpp.i
+
+.PHONY : mycat.i
+
+# target to preprocess a source file
+mycat.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycat.cpp.i
+.PHONY : mycat.cpp.i
+
+mycat.s: mycat.cpp.s
+
+.PHONY : mycat.s
+
+# target to generate assembly for a file
+mycat.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycat.cpp.s
+.PHONY : mycat.cpp.s
+
 mycp.o: mycp.cpp.o
 
 .PHONY : mycp.o
@@ -176,33 +203,6 @@ mycp.s: mycp.cpp.s
 mycp.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.s
 .PHONY : mycp.cpp.s
-
-myls.o: myls.cpp.o
-
-.PHONY : myls.o
-
-# target to build an object file
-myls.cpp.o:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.o
-.PHONY : myls.cpp.o
-
-myls.i: myls.cpp.i
-
-.PHONY : myls.i
-
-# target to preprocess a source file
-myls.cpp.i:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.i
-.PHONY : myls.cpp.i
-
-myls.s: myls.cpp.s
-
-.PHONY : myls.s
-
-# target to generate assembly for a file
-myls.cpp.s:
-	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myls.cpp.s
-.PHONY : myls.cpp.s
 
 mymv.o: mymv.cpp.o
 
@@ -231,6 +231,33 @@ mymv.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mymv.cpp.s
 .PHONY : mymv.cpp.s
 
+myrm.o: myrm.cpp.o
+
+.PHONY : myrm.o
+
+# target to build an object file
+myrm.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myrm.cpp.o
+.PHONY : myrm.cpp.o
+
+myrm.i: myrm.cpp.i
+
+.PHONY : myrm.i
+
+# target to preprocess a source file
+myrm.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myrm.cpp.i
+.PHONY : myrm.cpp.i
+
+myrm.s: myrm.cpp.s
+
+.PHONY : myrm.s
+
+# target to generate assembly for a file
+myrm.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/myrm.cpp.s
+.PHONY : myrm.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -243,15 +270,18 @@ help:
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
+	@echo "... mycat.o"
+	@echo "... mycat.i"
+	@echo "... mycat.s"
 	@echo "... mycp.o"
 	@echo "... mycp.i"
 	@echo "... mycp.s"
-	@echo "... myls.o"
-	@echo "... myls.i"
-	@echo "... myls.s"
 	@echo "... mymv.o"
 	@echo "... mymv.i"
 	@echo "... mymv.s"
+	@echo "... myrm.o"
+	@echo "... myrm.i"
+	@echo "... myrm.s"
 .PHONY : help
 
 
