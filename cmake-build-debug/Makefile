@@ -150,6 +150,33 @@ FileManager.cpp.s:
 	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/FileManager.cpp.s
 .PHONY : FileManager.cpp.s
 
+mycp.o: mycp.cpp.o
+
+.PHONY : mycp.o
+
+# target to build an object file
+mycp.cpp.o:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.o
+.PHONY : mycp.cpp.o
+
+mycp.i: mycp.cpp.i
+
+.PHONY : mycp.i
+
+# target to preprocess a source file
+mycp.cpp.i:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.i
+.PHONY : mycp.cpp.i
+
+mycp.s: mycp.cpp.s
+
+.PHONY : mycp.s
+
+# target to generate assembly for a file
+mycp.cpp.s:
+	$(MAKE) -f CMakeFiles/CS3307.dir/build.make CMakeFiles/CS3307.dir/mycp.cpp.s
+.PHONY : mycp.cpp.s
+
 mymv.o: mymv.cpp.o
 
 .PHONY : mymv.o
@@ -189,6 +216,9 @@ help:
 	@echo "... FileManager.o"
 	@echo "... FileManager.i"
 	@echo "... FileManager.s"
+	@echo "... mycp.o"
+	@echo "... mycp.i"
+	@echo "... mycp.s"
 	@echo "... mymv.o"
 	@echo "... mymv.i"
 	@echo "... mymv.s"

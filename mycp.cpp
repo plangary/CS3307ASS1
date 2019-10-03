@@ -1,10 +1,10 @@
 //
-// Created by pouya on 2019-10-02.
+// Created by pouya on 2019-10-03.
 //
-
 #include "FileManager.cpp"
+#include "mycp.h"
+class mycp{
 
-class mymv{
 
 };
 
