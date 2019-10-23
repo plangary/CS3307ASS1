@@ -1,0 +1,10 @@
+To run, make sure all utility files and FileManager.cpp are in the same directory.
+
+Compile each utility file using g++
+
+run each file using ./a.out while providing correct arguments in command line
+
+
+Run Command Example For myrm.cpp : g++ myrm.cpp
+                                   ./a.out fileName1 fileName2...
+

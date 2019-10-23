@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CS3307.dir/mycat.cpp.o"
   "CMakeFiles/CS3307.dir/mycp.cpp.o"
   "CMakeFiles/CS3307.dir/mydiff.cpp.o"
+  "CMakeFiles/CS3307.dir/myls.cpp.o"
   "CMakeFiles/CS3307.dir/mymv.cpp.o"
   "CMakeFiles/CS3307.dir/myrm.cpp.o"
   "CMakeFiles/CS3307.dir/mystat.cpp.o"

@@ -2,7 +2,6 @@
 #include <vector>
 #include <sys/stat.h>
 #include <string>
-#include <map>
 #include <errno.h>
 #include <pwd.h>
 #include <grp.h>
@@ -10,6 +9,7 @@
 #include <fstream>
 #include <unistd.h>
 #include <cstring>
+#include <dirent.h>
 
 using namespace std;
 
@@ -35,7 +35,7 @@ private:
     time_t modTime, statusChangeTime;
     blksize_t blockSize;
 
-    vector<int> children;
+    vector<FileManager *> children;
 
     struct stat results;
     struct passwd *pwd;
@@ -151,29 +151,29 @@ public:
     }
 
     int myCompare(FileManager *object) {
-        if (typeString == "regular") {
+        if (typeString == "regular") { //check regular file
             if (object->getSize() == size) {
                 int i;
                 i = 0;
-                fstream file1;
+                fstream file1; //create fstreams
                 fstream file2;
 
-                file1.open(object->getName());
+                file1.open(object->getName()); //open fstreams
                 file2.open(name);
 
-                char fileArray1[object->getSize()];
+                char fileArray1[object->getSize()]; //create char arrays to old chars
                 char fileArray2[size];
 
-                while (!file1.eof()) {
+                while (!file1.eof()) { //iterate through file and compare each character
                     file1.getline(fileArray1, size);
                     file2.getline(fileArray2, size);
                     i++;
                     if (strcmp(fileArray1, fileArray2) !=
-                        0) { //not fully working. doesnt work when same amount of characters but different chars
+                        0) {
                         cout << "FILES NOT EQUAL!\n";
                         return errNum = -1;
                     }
-                    cout << "FILES ARE EQUAL!222\n";
+                    cout << "FILES ARE EQUAL!\n";
                     return errNum = 0;
                 }
             } else {
@@ -192,11 +192,25 @@ public:
 
     int myExpand() {
         if (typeString == "directory") {
-
+            DIR *currDir;
+            dirent *entry;
+            FileManager *file;
+            currDir = opendir(name.c_str());
+            while ((entry = readdir(currDir)) != NULL) {
+                if (strcmp(entry->d_name, "..") == 0 || strcmp(entry->d_name, ".") == 0) {
+                } else {
+                    file = new FileManager(name + "/" + entry->d_name);
+                    children.push_back(file);
+                    file->myExpand();
+                }
+            }
+            errNum = errno;
+            closedir(currDir);
+            return 0;
+        } else {
+            errNum = ENOTSUP;
+            return -1;
         }
-
-        errNum = ENOTSUP;
-        return -1;
     }
 
 
@@ -253,21 +267,9 @@ public:
         return blockSize;
     }
 
+    vector<FileManager *> getChildren() {
+        return children;
+
+    }
 };
 
-/*int main() {
-
-    FileManager *test = new FileManager("newFile");
-    //FileManager *test2 = new FileManager("new");
-    //test->myCompare(test2);
-
-    test->myRename("/media/sf_VMSgaring/CS3307ASS1/dir/test");
-    //test->myRemove("test");
-    //cout<<test->getName();
-    //fstream test2;
-    //test->dump(test2);
-
-
-
-    return 0;
-}*/

@@ -12,15 +12,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd5f8722-7fab-448d-aa52-0992ccd29eb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DIR2/New" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DIR2/myrm.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DIR2/ss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DIR2/test/New" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/New" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gang" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helloworld" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myls.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FileManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CS3307.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CS3307.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CS3307.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mycat.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mycp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydiff.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mydiff.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymv.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mymv.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myrm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/myrm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mystat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mystat.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +111,8 @@
       <workItem from="1569976752224" duration="800000" />
       <workItem from="1570050719402" duration="724000" />
       <workItem from="1570079893693" duration="4513000" />
-      <workItem from="1570109603258" duration="2067000" />
+      <workItem from="1570109603258" duration="11307000" />
+      <workItem from="1570141056692" duration="985000" />
     </task>
     <servers />
   </component>
